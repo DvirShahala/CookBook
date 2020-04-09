@@ -1,0 +1,61 @@
+body {
+    text-rendering: optimizeLegibility;
+    font-family: 'Gotu', sans-serif;
+    letter-spacing: 0px;
+    font-size: 17px;
+    color: #8d8f90;
+    font-weight: 400;
+    line-height: 32px;
+    background-color: #edefef;
+}
+h4 { 
+    color: #25292a;
+    margin: 0px 0px 10px 0px;
+    font-size: 20px;
+    font-family: 'Gotu', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+a { 
+    text-decoration: none; 
+    color: #8d8f90; 
+    -webkit-transition: all 0.3s; 
+    -moz-transition: all 0.3s; 
+    transition: all 0.3s; 
+}
+a:focus, a:hover { 
+    text-decoration: none;
+    color: rgb(27, 91, 230);
+}
+.pageHeader {
+    background: url("C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/images/loginImage.jpg")no-repeat;
+    position: relative;
+    background-size:cover;
+}
+.pageCaption {
+    padding-top: 85px/*170px*/;
+    padding-bottom: 70px/*174px*/;
+}
+.pageTitle {
+    margin-top: 0px;
+    font-size: 46px;
+    line-height: 1;
+    color: #fff;
+    font-weight: 550;
+    text-align: center;
+}
+.card-section {
+    position: relative;
+    bottom: 50px/*60px*/;
+}
+.cardForm {
+    padding: 80px;
+    border-radius: 85px;
+}
+/*.section-title {
+    margin-bottom: 60px;
+}*/
+.formGroup {
+    margin-bottom: 60px;
+}
