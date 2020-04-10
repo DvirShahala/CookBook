@@ -1,4 +1,10 @@
-//click reset button
+var requestURL = 'https://my-json-server.typicode.com/DvirShahala/DBjson/users';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+
+//Click reset button
 $(document).ready(function () {
   $("#reset").click(function () {
     $(".form-control").val('');
@@ -7,29 +13,17 @@ $(document).ready(function () {
   });
 });
 
-//click submit button
+//Click submit button
 $(document).ready(function () {
   $("#submit").click(function () {
-
-    /*let requestURL = 'C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/json/users.json';
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.send();
-
-    request.onload = function () {
-      const usersJsonnew = request.response;
-    }*/
-    const data = '[{"username": "dvir", "password": 1},{"username": "admin", "password": 123}]';
-
-    let usersJson = JSON.parse(data);
+    let usersJson =  request.response;
     let userName = $("#userName").val();
     let password = $("#password").val();
     let is_valid = false;
 
     $("#errorMessage").empty();
     $("#warningMessage").empty();
-    //check if username or password empty
+    //Check if username or password empty
     if (userName.length == 0 || password.length == 0) {
       $("#warningMessage").html(
         "<div class='alert alert-warning' role='alert'> Username or password cannot be empty. </div>")
