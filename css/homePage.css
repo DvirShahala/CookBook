@@ -14,13 +14,24 @@ body {
     width: 50%;
     height: 30%;
 }
+.navBarImage {
+  background-image:none;
+  height: 60px;
+  width: 60px;
+}
+#signOut {
+  color: #e7a59a;
+}
+#signOut:hover {
+  color: #eb6b54;
+}
 
 
 
 
 
 
-.site-footer
+/*.site-footer
 {
   background-color:#26272b;
   padding:45px 0 20px;
@@ -182,4 +193,4 @@ body {
     margin-right:0;
     font-weight:600
   }
-}
+}*/

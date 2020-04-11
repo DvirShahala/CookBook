@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,11 +10,12 @@
     <link href="css/login.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="pageHeader">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="col-12">
                     <div class="pageCaption">
                         <h1 class="pageTitle">Cook Book</h1>
                     </div>
@@ -21,39 +23,36 @@
             </div>
         </div>
     </div>
-
-    <div class="card-section">
-        <div class="container">
-            <div class="cardForm bg-white mb30">
-                <div class="row">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <form>
-                            <div class="formGroup mb-4">
-                                <h4>User name</h4>
-                                <input type="text" class="form-control" id="userName" placeholder="Enter user name">
-                            </div>
-                            <div class="formGroup mb-4">
-                                <h4>Password</h4>
-                                <input type="password" class="form-control" id="password" placeholder="Enter password">
-                            </div>
-                            <div id="warningMessage"></div>
-                            <div id="errorMessage"></div>
-                        </form>
-                        <button type="submit" class="btn btn-dark" id="submit">Submit</button>
-                        <button type="reset" class="btn btn-dark" id="reset">Reset</button>
+ 
+    <div class="row"> 
+        <div class="col align-self-start"></div>
+        <div class="card-section colalign-self-center">
+            <div class="cardForm bg-white">
+                            <form>
+                                <div class="formGroup mb-4">
+                                    <h4>User name</h4>
+                                    <input type="text" class="form-control" id="userName" placeholder="Enter user name">
+                                </div>
+                                <div class="formGroup mb-4">
+                                    <h4>Password</h4>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter password">
+                                </div>
+                                <div id="warningMessage"></div>
+                                <div id="errorMessage"></div>
+                            </form>
+                            <button type="submit" class="btn btn-dark" id="submit">Submit</button>
+                            <button type="reset" class="btn btn-dark" id="reset">Reset</button>
+                        </div>
+                    <div class="text-center">
+                        Created by <a href="https://www.linkedin.com/in/dvir-shahala-248623135/" target="_blank">Dvir Shahala</a>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                    Created by <a href="https://www.linkedin.com/in/dvir-shahala-248623135/" target="_blank">Dvir
-                        Shahala</a>
-                </div>
-            </div>
+        </div>
+        <div class="col align-self-end">
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/login.js"></script>
 </body>
+
 </html>

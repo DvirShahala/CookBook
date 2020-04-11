@@ -48,11 +48,18 @@ a:focus, a:hover {
 .card-section {
     position: relative;
     bottom: 50px/*60px*/;
+    max-width: 100%;
+    max-height: 100%;
 }
 .cardForm {
     padding: 80px;
     border-radius: 25px;
+
 }
 .formGroup {
     margin-bottom: 60px;
+}
+.row {
+    max-width: 100%;
+    max-height: 100%;
 }
