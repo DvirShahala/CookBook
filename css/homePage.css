@@ -3,17 +3,6 @@ body {
     line-height: 32px;
     background-color: #edefef;
 }
-.card-deck {
-    margin-bottom: 50px;
-    margin-left: 60px;
-    margin-top: 50px;
-    width: 85%;
-}
-.card-img-top {
-    position: absolute; top:0; left: 0;
-    width: 50%;
-    height: 30%;
-}
 .navBarImage {
   background-image:none;
   height: 60px;
@@ -25,13 +14,54 @@ body {
 #signOut:hover {
   color: #eb6b54;
 }
+.card-deck {
+  margin-bottom: 3%;
+  margin-left: 7.5%;
+  margin-top: 4%;
+  width: 85%;
+}
+.container {
+  padding-left: 0;
+  width: 104%;
+}
+.card-img-top {
+  height: 260px;
+  width: 100%;
+  /*display: block;*/
+  transition: .5s ease;
+  backface-visibility: hidden;  
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+.container:hover .card-img-top {
+  opacity: 0.4;
+}
+.container:hover .middle {
+  opacity: 1;
+}
+#text {
+  font-size: 16px;
+  padding: 16px 32px;
+}
 
 
 
 
 
 
-/*.site-footer
+
+
+
+
+
+.site-footer
 {
   background-color:#26272b;
   padding:45px 0 20px;
@@ -193,4 +223,4 @@ body {
     margin-right:0;
     font-weight:600
   }
-}*/
+}

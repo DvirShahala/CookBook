@@ -6,27 +6,50 @@ request.send();
 
 request.onload = function () {
     const recipes = request.response;
-    makeCards(recipes);
+    //makeCards(recipes);
 }
 
 function makeCards(recipes)
 {
-    for (let i = 0; i < recipes.length; i++) {
+    const Cards = document.querySelector('.card-deck');
+    for (let i = 0; i < 1 /*recipes.length*/; i++) {
         
-        var myCard = document.createElement('div');
-        myCard.className = "card";
+
+        /*<div class="card">
+          <img class="card-img-top" src="images/pastaPomadoro.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>*/
+
+
+        const myCard = document.createElement('div');
         var myImg = document.createElement('img');
+        const myBodyCard = document.createElement('div');
+        var myTitleCard = document.createElement('h5');
+        var myDescription = document.createElement('p');
+        
+        myCard.className = "card";
         myImg.className = "card-img-top";
-        var myCard = document.createElement('div');
-        var myCard = document.createElement('div');
-        var myCard = document.createElement('div');
+        myBodyCard.className = "card-body";
+        myTitleCard.className = "card-title";
+        myDescription.className = "card-text";
+        myImg.alt = "Card image cap";
 
+        myImg.src = recipes[i].image;
+        myTitleCard.textContent = recipes[i].title;
+        myDescription.textContent = recipes[i].description;
+
+        myCard.appendChild(myImg);
+        myBodyCard.appendChild(myTitleCard);
+        myBodyCard.appendChild(myDescription);
+        myCard.appendChild(myBodyCard);
+        
+        Cards.appendChild(myBodyCard);
+        Cards.appendChild(myCard);
+        
     }
-
-
-  //  $(".card-deck").html(
-   //     "<div class='card'> <img class='card-img-top' src='images/pastaPomadoro.jpg' alt='Card image cap'> <div class='card-body'> <h5 class='card-title'>Card title</h5> <p class='card-text'>This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> <p class='card-text'><small class='text-muted'>Last updated 3 mins ago</small></p> </div> </div>");
-
     /*<div class="card">
           <img class="card-img-top" src="images/pastaPomadoro.jpg" alt="Card image cap">
           <div class="card-body">
