@@ -9,10 +9,10 @@ body {
   width: 60px;
 }
 #signOut {
-  color: #e7a59a;
+  color: #eb6b54;
 }
 #signOut:hover {
-  color: #eb6b54;
+  color: #d44128;
 }
 .card-deck {
   margin-bottom: 3%;
@@ -20,16 +20,26 @@ body {
   margin-top: 4%;
   width: 85%;
 }
+.card {
+  margin-top: 4%;
+  margin-bottom: 1.5%;
+  margin-left: 2.5%;
+  width: 25%;
+  border-radius: 25px;
+}
 .container {
   padding-left: 0;
   width: 104%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .card-img-top {
   height: 260px;
-  width: 100%;
-  /*display: block;*/
+  width: 100.5%;
   transition: .5s ease;
-  backface-visibility: hidden;  
+  backface-visibility: hidden;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .middle {
   transition: .5s ease;
@@ -50,8 +60,9 @@ body {
   font-size: 16px;
   padding: 16px 32px;
 }
-
-
+.dropdown-item {
+  cursor: pointer;
+}
 
 
 
@@ -64,6 +75,7 @@ body {
 .site-footer
 {
   background-color:#26272b;
+  margin-top: 4%;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;

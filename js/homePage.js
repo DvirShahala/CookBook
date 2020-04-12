@@ -1,77 +1,84 @@
+const FLEX = document.querySelector(".d-flex");
 var requestURL = 'https://my-json-server.typicode.com/DvirShahala/DBjson/recipes';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
-
 request.onload = function () {
-    const recipes = request.response;
-    //makeCards(recipes);
+  const recipes = request.response;
+  makeCards(recipes, "all");
 }
 
-function makeCards(recipes)
-{
-    const Cards = document.querySelector('.card-deck');
-    for (let i = 0; i < 1 /*recipes.length*/; i++) {
-        
+function makeCards(recipes, categoryType) {
 
-        /*<div class="card">
-          <img class="card-img-top" src="images/pastaPomadoro.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>*/
+  for (let i = 0; i < recipes.length; i++) {
 
+    var myCard = document.createElement('div');
+    var myContainer = document.createElement('div');
+    var myImg = document.createElement('img');
+    var myMiddleCard = document.createElement('div');
+    var myButton = document.createElement('button');
+    var myBodyCard = document.createElement('div');
+    var myTitleCard = document.createElement('h5');
+    var myDescription = document.createElement('p');
 
-        const myCard = document.createElement('div');
-        var myImg = document.createElement('img');
-        const myBodyCard = document.createElement('div');
-        var myTitleCard = document.createElement('h5');
-        var myDescription = document.createElement('p');
-        
-        myCard.className = "card";
-        myImg.className = "card-img-top";
-        myBodyCard.className = "card-body";
-        myTitleCard.className = "card-title";
-        myDescription.className = "card-text";
-        myImg.alt = "Card image cap";
+    myCard.className = "card";
+    myContainer.className = "container";
+    myImg.className = "card-img-top";
+    myImg.alt = "Card image cap";
+    myMiddleCard.className = "middle";
+    myButton.className = "btn btn-secondary";
+    myButton.id = "text";
+    myBodyCard.className = "card-body";
+    myTitleCard.className = "card-title";
+    myDescription.className = "card-text";
+    myButton.textContent = "Recipe";
 
-        myImg.src = recipes[i].image;
-        myTitleCard.textContent = recipes[i].title;
-        myDescription.textContent = recipes[i].description;
+    if (recipes[i].type == categoryType || categoryType == "all") {
+      myImg.src = recipes[i].image;
+      myTitleCard.textContent = recipes[i].title;
+      myDescription.textContent = recipes[i].description;
 
-        myCard.appendChild(myImg);
-        myBodyCard.appendChild(myTitleCard);
-        myBodyCard.appendChild(myDescription);
-        myCard.appendChild(myBodyCard);
-        
-        Cards.appendChild(myBodyCard);
-        Cards.appendChild(myCard);
-        
+      myContainer.appendChild(myImg);
+      myContainer.appendChild(myMiddleCard);
+      myMiddleCard.appendChild(myButton);
+      myBodyCard.appendChild(myTitleCard);
+      myBodyCard.appendChild(myDescription);
+      myCard.appendChild(myContainer);
+      myCard.appendChild(myBodyCard);
+
+      FLEX.appendChild(myCard);
     }
-    /*<div class="card">
-          <img class="card-img-top" src="images/pastaPomadoro.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src=".../100px200/" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src=".../100px200/" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>*/
+  }
 }
+$(document).ready(function () {
+  $("#allRecipes").click(function () {
+    $(".d-flex").empty();
+    recipes = request.response;
+    makeCards(recipes, "all");
+  });
+});
+
+$(document).ready(function () {
+  $("#startersRecipes").click(function () {
+    $(".d-flex").empty();
+    recipes = request.response;
+    makeCards(recipes, "starters");
+  });
+});
+
+$(document).ready(function () {
+  $("#mainRecipes").click(function () {
+    $(".d-flex").empty();
+    recipes = request.response;
+    makeCards(recipes, "main");
+  });
+});
+
+$(document).ready(function () {
+  $("#dessertRecipes").click(function () {
+    $(".d-flex").empty();
+    recipes = request.response;
+    makeCards(recipes, "dessert");
+  });
+});
