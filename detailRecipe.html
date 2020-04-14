@@ -3,35 +3,24 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>My Cook Book</title>
-  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/homePage.css" rel="stylesheet" />
-  <link href="css/footer.css" rel="stylesheet" />
+  <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/detailRecipe.css" rel="stylesheet"/>
+  <link href="css/footer.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand">CookBook</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="C:\Users\p0024269\Desktop\WebStudying\Exercise03\CookBook\homePage.html">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Catagories
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" id="allRecipes">All</a>
-            <a class="dropdown-item" id="startersRecipes">Starters</a>
-            <a class="dropdown-item" id="mainRecipes">Main</a>
-            <a class="dropdown-item" id="dessertRecipes">Dessert</a>
-          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link">Add recipe</a>
@@ -53,7 +42,8 @@
     </div>
   </nav>
 
-  <div class="d-flex align-content-start flex-wrap" id="allCard"></div>
+  <div class="title"></div>
+  <div class="d-flex justify-content-around"></div>
 
   <footer class="site-footer">
     <div class="container">
@@ -67,10 +57,10 @@
         <div class="col-xs-6 col-md-3">
           <h6>Categories</h6>
           <ul class="footer-links">
-            <li><a id="allRecipes2">All</a></li>
-            <li><a id="startersRecipes2">Starters</a></li>
-            <li><a id="mainRecipes2">Main</a></li>
-            <li><a id="dessertRecipes2">Dessert</a></li>
+            <li><a id="allRecipes"></a>All</a></li>
+            <li><a id="startersRecipes">Starters</a></li>
+            <li><a href="http://scanfcode.com/category/back-end-development/">Main</a></li>
+            <li><a href="http://scanfcode.com/category/java-programming-language/">Dessert</a></li>
           </ul>
         </div>
 
@@ -79,8 +69,8 @@
           <ul class="footer-links">
             <li><a href="aboutUs.html">About Us</a></li>
             <li><a href="http://Google.co.il/" target="_blank">Google</a></li>
-            <li><a href="https://www.thecalculatorsite.com/cooking/cooking-calculator.php/" target="_blank">
-              Calculator For Baking</a></li>
+            <li><a href="https://www.thecalculatorsite.com/cooking/cooking-calculator.php/" target="_blank">Calculator
+                For Baking</a></li>
           </ul>
         </div>
       </div>
@@ -92,33 +82,26 @@
           <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by Dvir Shahala
           </p>
         </div>
+
         <div class="col-md-4 col-sm-6 col-xs-12">
           <ul class="social-icons">
-            <li>
-              <a class="facebook" href="https://www.facebook.com/dvirsha/" target="_blank">
-                <i class="fa fa-facebook"></i>
-              </a>
-            </li>
-            <li><a class="twitter" href="https://twitter.com/ShahalaDvir/" target="_blank">
-                <i class="fa fa-twitter"></i>
-              </a>
-            </li>
-            <li><a class="dribbble" href="https://www.instagram.com/dvirshahala/" target="_blank">
-                <i class="fa fa-instagram"></i>
-              </a>
-            </li>
-            <li><a class="linkedin" href="https://www.linkedin.com/in/dvir-shahala-248623135/" target="_blank">
-                <i class="fa fa-linkedin"></i>
-              </a>
-            </li>
+            <li><a class="facebook" href="https://www.facebook.com/dvirsha/" target="_blank"><i
+                  class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="https://twitter.com/ShahalaDvir/" target="_blank"><i
+                  class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="https://www.instagram.com/dvirshahala/" target="_blank"><i
+                  class="fa fa-instagram"></i></a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/dvir-shahala-248623135/" target="_blank"><i
+                  class="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
     </div>
   </footer>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/bootstrap/bootstrap.min.js"></script>
-  <script src="js/homePage.js"></script>
+  <script src="js/detailRecipe.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,6 @@
 const FLEX = document.querySelector(".d-flex");
+
+//Get from db JSON details about recipes 
 var requestURL = 'https://my-json-server.typicode.com/DvirShahala/DBjson/recipes';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -9,6 +11,7 @@ request.onload = function () {
   makeCards(recipes, "all");
 }
 
+//Make cards from json into html page 
 function makeCards(recipes, categoryType) {
 
   for (let i = 0; i < recipes.length; i++) {
@@ -28,12 +31,21 @@ function makeCards(recipes, categoryType) {
     myImg.alt = "Card image cap";
     myMiddleCard.className = "middle";
     myButton.className = "btn btn-secondary";
-    myButton.id = "text";
+    myButton.id = "detailRecipe";
     myBodyCard.className = "card-body";
     myTitleCard.className = "card-title";
     myDescription.className = "card-text";
     myButton.textContent = "Recipe";
 
+    //Event onclick
+    myButton.addEventListener("click", function () {
+      var thisRecipe = recipes[i].title;
+      var indexRecipe = i;
+      var mylink = "C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
+      location.replace(mylink);
+    });
+
+    //Filter by catagory or all
     if (recipes[i].type == categoryType || categoryType == "all") {
       myImg.src = recipes[i].image;
       myTitleCard.textContent = recipes[i].title;
@@ -51,34 +63,46 @@ function makeCards(recipes, categoryType) {
     }
   }
 }
+
+//Click category recipe
 $(document).ready(function () {
-  $("#allRecipes").click(function () {
+
+  $("#allRecipes, #allRecipes2").click(function () {
     $(".d-flex").empty();
     recipes = request.response;
     makeCards(recipes, "all");
   });
-});
 
-$(document).ready(function () {
-  $("#startersRecipes").click(function () {
+  $("#startersRecipes, #startersRecipes2").click(function () {
     $(".d-flex").empty();
     recipes = request.response;
     makeCards(recipes, "starters");
   });
-});
 
-$(document).ready(function () {
-  $("#mainRecipes").click(function () {
+  $("#mainRecipes, #mainRecipes2").click(function () {
     $(".d-flex").empty();
     recipes = request.response;
     makeCards(recipes, "main");
   });
-});
 
-$(document).ready(function () {
-  $("#dessertRecipes").click(function () {
+  $("#dessertRecipes, #dessertRecipes2").click(function () {
     $(".d-flex").empty();
     recipes = request.response;
     makeCards(recipes, "dessert");
+  });
+});
+
+//Searchs
+$(document).ready(function () {
+  $("#searchButton").click(function () {
+    var word = searchInput.value;
+    window.find(word);
+  });
+
+  $("#searchInput").keyup(function () {
+    var word = searchInput.value;
+    if (word.length >= 3) {
+      window.find(word);
+    }
   });
 });
