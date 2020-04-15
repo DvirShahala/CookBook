@@ -1,0 +1,21 @@
+.dropdown-item {
+    cursor: pointer;
+}
+.navbar {
+    background-color: #000039;
+}
+.dropdown-menu {
+    color: rgb(44, 69, 102);
+}
+.dropdown-item:hover {
+    background-color: #b8b8da;
+}
+#searchButton {
+    background-color: #1e2a85;
+}
+#signOut {
+    color: #e7806e;
+}
+#signOut:hover {
+    color: #da543c;
+}

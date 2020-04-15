@@ -1,0 +1,29 @@
+body {
+  font-family: 'Gotu', sans-serif;
+  line-height: 32px;
+  background-color: #edefef;
+}
+.title {
+  font-size: 37px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 40%;
+}
+.mainImg {
+  width: 45%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 4%;
+  margin-bottom: 3%;
+  max-height: 100%;
+}
+.d-flex {
+  min-height: 100vh;
+}
+#textRecipe {
+  font-size: 20px;
+  margin-left: 3%;
+  margin-right: 3%;
+  max-height: 100px;
+}

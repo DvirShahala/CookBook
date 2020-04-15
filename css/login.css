@@ -3,10 +3,11 @@ body {
     font-family: 'Gotu', sans-serif;
     letter-spacing: 0px;
     font-size: 17px;
-    color: #8d8f90;
+    color: whitesmoke;
     font-weight: 400;
     line-height: 32px;
-    background-color: #edefef;
+    background: url("C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/images/loginImage.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 h4 { 
     color: #25292a;
@@ -19,7 +20,7 @@ h4 {
 }
 a { 
     text-decoration: none; 
-    color: #8d8f90; 
+    color: whitesmoke; 
     -webkit-transition: all 0.3s; 
     -moz-transition: all 0.3s; 
     transition: all 0.3s; 
@@ -27,11 +28,6 @@ a {
 a:focus, a:hover { 
     text-decoration: none;
     color: rgb(27, 91, 230);
-}
-.pageHeader {
-    background: url("C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/images/loginImage.jpg")no-repeat;
-    position: relative;
-    background-size:cover;
 }
 .pageCaption {
     padding-top: 85px;
@@ -47,7 +43,7 @@ a:focus, a:hover {
 }
 .card-section {
     position: relative;
-    bottom: 50px/*60px*/;
+    bottom: 50px;
     max-width: 100%;
     max-height: 100%;
 }
