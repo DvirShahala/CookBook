@@ -28,7 +28,7 @@ function createMoreDetail(titleRecipe, indexRecipe) {
   myTextRecipe.id = "textRecipe";
   myImg.src = recipes[indexRecipe].image;
   myTitle.textContent = titleRecipe;
-  myTextRecipe.textContent = recipes[indexRecipe].description;
+  myTextRecipe.textContent = recipes[indexRecipe].fullRecipe;
 
   myMainFlex.appendChild(myImg);
   myMainFlex.appendChild(myTextRecipe);

@@ -27,13 +27,16 @@ $(document).ready(function () {
       for (let i = 0; i < usersJson.length; i++) {
         if (usersJson[i].username == userName && usersJson[i].password == password) {
           is_valid = true;
+          break;
         }
       }
       if (is_valid == true) {
         location.replace("C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/homePage.html");
-        /*$("#errorMessage").html(
-          "<div class='alert alert-danger' role='alert'> Username or password is not valid! </div>");*/
-      } /*else {*/
+      } else {
+        $("#errorMessage").html(
+          "<div class='alert alert-danger' role='alert'> Username or password is not valid! </div>");
+      }
+      return false;
     }
   });
 });

@@ -32,10 +32,11 @@ function makeCards(recipes, categoryType) {
     myMiddleCard.className = "middle";
     myButton.className = "btn btn-secondary";
     myButton.id = "detailRecipe";
+    myButton.textContent = "Full Recipe";
     myBodyCard.className = "card-body";
     myTitleCard.className = "card-title";
     myDescription.className = "card-text";
-    myButton.textContent = "Recipe";
+    
 
     //Event onclick
     myButton.addEventListener("click", function () {

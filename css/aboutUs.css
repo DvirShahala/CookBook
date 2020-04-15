@@ -22,9 +22,3 @@ body {
   height: 15%;
   margin-left: 40%;
 }
-#signOut {
-  color: #eb6b54;
-}
-#signOut:hover {
-  color: #d44128;
-}

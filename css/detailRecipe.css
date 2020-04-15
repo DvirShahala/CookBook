@@ -21,12 +21,6 @@ body {
 .d-flex {
   min-height: 100vh;
 }
-#signOut {
-  color: #eb6b54;
-}
-#signOut:hover {
-  color: #d44128;
-}
 #textRecipe {
   font-size: 20px;
   margin-left: 3%;

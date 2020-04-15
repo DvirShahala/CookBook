@@ -39,18 +39,10 @@ body {
 .container:hover .middle {
   opacity: 1;
 }
-.dropdown-item {
-  cursor: pointer;
-}
 #detailRecipe {
-  font-size: 20px;
+  font-size: 15px;
   padding: 16px 32px;
-}
-#signOut {
-  color: #eb6b54;
-}
-#signOut:hover {
-  color: #d44128;
+  background-color: #152072;
 }
 #allCard {
   margin-left: 13%;
