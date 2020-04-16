@@ -42,7 +42,7 @@ function makeCards(recipes, categoryType) {
     myButton.addEventListener("click", function () {
       var thisRecipe = recipes[i].title;
       var indexRecipe = i;
-      var mylink = "C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
+      var mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
       location.replace(mylink);
     });
 

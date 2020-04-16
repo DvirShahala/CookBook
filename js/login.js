@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
       }
       if (is_valid == true) {
-        location.replace("C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/homePage.html");
+        location.replace("./homePage.html");
       } else {
         $("#errorMessage").html(
           "<div class='alert alert-danger' role='alert'> Username or password is not valid! </div>");
