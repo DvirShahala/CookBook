@@ -6,7 +6,7 @@ body {
     color: whitesmoke;
     font-weight: 400;
     line-height: 32px;
-    background: url("C:/Users/p0024269/Desktop/WebStudying/Exercise03/CookBook/images/loginImage.jpg") no-repeat center center fixed;
+    background: url("../images/loginImage.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 h4 { 

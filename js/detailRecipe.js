@@ -19,7 +19,6 @@ function createMoreDetail(titleRecipe, indexRecipe) {
   const recipes = request.response;
   const myTitle = document.querySelector(".title");
   const myMainFlex = document.querySelector(".d-flex");
-
   var myImg = document.createElement('img');
   var myTextRecipe = document.createElement('div');
 
@@ -32,14 +31,6 @@ function createMoreDetail(titleRecipe, indexRecipe) {
 
   myMainFlex.appendChild(myImg);
   myMainFlex.appendChild(myTextRecipe);
-
-  /*<div class="title">Pasta Pomadoro</div>
-<div class="d-flex justify-content-around">
-  <img class="mainImg" src="images/pastaPomadoro.jpg">
-  <div class="d-flex justify-content-end flex-wrap" id="textRecipe">
-    safsffdsfffddsafsffdsfffdd
-  </div>
-  </div>*/
 }
 
 //Searchs
