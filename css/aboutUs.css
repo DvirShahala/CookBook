@@ -1,13 +1,11 @@
 body {
-  font-family: 'Gotu', sans-serif;
   line-height: 32px;
   background-color: #edefef;
 }
-.title {
-  font-size: 37px;
-  margin-top: 3%;
+.titleAboutUs {
   margin-bottom: 3%;
-  margin-left: 40%;
+  margin-left: 42%;
+  margin-top: 3%;
 }
 .textAbout {
   font-size: 28px;

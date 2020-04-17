@@ -1,7 +1,10 @@
 body {
-  font-family: 'Gotu', sans-serif;
   line-height: 32px;
   background-color: #edefef;
+}
+.title {
+  margin-left: 42%;
+  margin-top: 3%;
 }
 .card {
   margin-top: 4%;
@@ -23,6 +26,7 @@ body {
   backface-visibility: hidden;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+  cursor: pointer;
 }
 .middle {
   transition: .5s ease;
@@ -31,7 +35,14 @@ body {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%)
+  -ms-transform: translate(-50%, -50%);
+}
+.card-title {
+  font-weight: bold;
+  cursor: pointer;
+}
+.card-title:hover {
+  color: #9a9caa;
 }
 .container:hover .card-img-top {
   opacity: 0.4;
