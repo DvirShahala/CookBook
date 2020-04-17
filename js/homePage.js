@@ -14,13 +14,29 @@ request.onload = function () {
 //Make cards from json into html page 
 function makeCards(recipes, categoryType) {
 
+  var myTitle = document.querySelector('.title');
+
+  switch (categoryType) {
+    case 'all':
+      myTitle.textContent = 'All Recipes';
+      break;
+    case 'starters':
+      myTitle.textContent = 'Starters';
+      break;
+    case 'main':
+      myTitle.textContent = 'Main';
+      break;
+    case 'dessert':
+      myTitle.textContent = 'Dessert';
+      break;
+  }
+
   for (let i = 0; i < recipes.length; i++) {
 
     var myCard = document.createElement('div');
     var myContainer = document.createElement('div');
     var myImg = document.createElement('img');
     var myMiddleCard = document.createElement('div');
-    var myButton = document.createElement('button');
     var myBodyCard = document.createElement('div');
     var myTitleCard = document.createElement('h5');
     var myDescription = document.createElement('p');
@@ -29,17 +45,23 @@ function makeCards(recipes, categoryType) {
     myContainer.className = "container";
     myImg.className = "card-img-top";
     myImg.alt = "Card image cap";
+    myImg.href = "detailRecipe.html";
     myMiddleCard.className = "middle";
-    myButton.className = "btn btn-secondary";
-    myButton.id = "detailRecipe";
-    myButton.textContent = "Full Recipe";
     myBodyCard.className = "card-body";
     myTitleCard.className = "card-title";
+    myTitleCard.href = "detailRecipe.html";
     myDescription.className = "card-text";
-    
 
-    //Event onclick
-    myButton.addEventListener("click", function () {
+
+    //Events onclick
+    myImg.addEventListener("click", function () {
+      var thisRecipe = recipes[i].title;
+      var indexRecipe = i;
+      var mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
+      location.replace(mylink);
+    });
+
+    myTitleCard.addEventListener("click", function () {
       var thisRecipe = recipes[i].title;
       var indexRecipe = i;
       var mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
@@ -54,7 +76,6 @@ function makeCards(recipes, categoryType) {
 
       myContainer.appendChild(myImg);
       myContainer.appendChild(myMiddleCard);
-      myMiddleCard.appendChild(myButton);
       myBodyCard.appendChild(myTitleCard);
       myBodyCard.appendChild(myDescription);
       myCard.appendChild(myContainer);
@@ -96,7 +117,9 @@ $(document).ready(function () {
 //Searchs
 $(document).ready(function () {
   $("#searchButton").click(function () {
+    //var searchFrom = document.querySelector('#allCard');
     var word = searchInput.value;
+    //searchFrom.find(word);
     window.find(word);
   });
 

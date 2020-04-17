@@ -4,14 +4,6 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 
-//Click reset button
-$(document).ready(function () {
-  $("#reset").click(function () {
-    $(".form-control").val('');
-    $("#errorMessage").empty();
-  });
-});
-
 //Click submit button
 $(document).ready(function () {
   $("#submit").click(function () {
@@ -20,7 +12,7 @@ $(document).ready(function () {
     let password = $("#password").val();
     let is_valid = false;
 
-    $("#errorMessage").empty();
+    $(".errorMessage").empty();
 
     //Check if username or password empty
     if (userName.length != 0 && password.length != 0) {
@@ -33,8 +25,8 @@ $(document).ready(function () {
       if (is_valid == true) {
         location.replace("./homePage.html");
       } else {
-        $("#errorMessage").html(
-          "<div class='alert alert-danger' role='alert'> Username or password is not valid! </div>");
+          $(".errorMessage").html(
+            "Username or password is not valid!");
       }
       return false;
     }
