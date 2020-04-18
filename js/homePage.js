@@ -8,12 +8,21 @@ request.responseType = 'json';
 request.send();
 request.onload = function () {
   const recipes = request.response;
-  makeCards(recipes, "all");
+
+  let url_string = window.location.href
+  let url = new URL(url_string);
+  let typeRecipe = url.searchParams.get("type");
+
+  if (typeRecipe == null) {
+    makeCards(recipes, "all");
+  }
+  else {
+    makeCards(recipes, typeRecipe);
+  }
 }
 
 //Make cards from json into html page 
 function makeCards(recipes, categoryType) {
-
   var myTitle = document.querySelector('.title');
 
   switch (categoryType) {
@@ -33,13 +42,13 @@ function makeCards(recipes, categoryType) {
 
   for (let i = 0; i < recipes.length; i++) {
 
-    var myCard = document.createElement('div');
-    var myContainer = document.createElement('div');
-    var myImg = document.createElement('img');
-    var myMiddleCard = document.createElement('div');
-    var myBodyCard = document.createElement('div');
-    var myTitleCard = document.createElement('h5');
-    var myDescription = document.createElement('p');
+    let myCard = document.createElement('div');
+    let myContainer = document.createElement('div');
+    let myImg = document.createElement('img');
+    let myMiddleCard = document.createElement('div');
+    let myBodyCard = document.createElement('div');
+    let myTitleCard = document.createElement('h5');
+    let myDescription = document.createElement('p');
 
     myCard.className = "card";
     myContainer.className = "container";
@@ -55,16 +64,16 @@ function makeCards(recipes, categoryType) {
 
     //Events onclick
     myImg.addEventListener("click", function () {
-      var thisRecipe = recipes[i].title;
-      var indexRecipe = i;
-      var mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
+      let thisRecipe = recipes[i].title;
+      let indexRecipe = i;
+      let mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
       location.replace(mylink);
     });
 
     myTitleCard.addEventListener("click", function () {
-      var thisRecipe = recipes[i].title;
-      var indexRecipe = i;
-      var mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
+      let thisRecipe = recipes[i].title;
+      let indexRecipe = i;
+      let mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
       location.replace(mylink);
     });
 
@@ -117,14 +126,12 @@ $(document).ready(function () {
 //Searchs
 $(document).ready(function () {
   $("#searchButton").click(function () {
-    //var searchFrom = document.querySelector('#allCard');
-    var word = searchInput.value;
-    //searchFrom.find(word);
+    let word = searchInput.value;
     window.find(word);
   });
 
   $("#searchInput").keyup(function () {
-    var word = searchInput.value;
+    let word = searchInput.value;
     if (word.length >= 3) {
       window.find(word);
     }

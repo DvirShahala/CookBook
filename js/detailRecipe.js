@@ -6,10 +6,10 @@ request.send();
 
 //Get parametes from url and call function
 request.onload = function () {
-  var url_string = window.location.href
-  var url = new URL(url_string);
-  var titleRecipe = url.searchParams.get("recipe");
-  var indexRecipe = url.searchParams.get("index");
+  let url_string = window.location.href
+  let url = new URL(url_string);
+  let titleRecipe = url.searchParams.get("recipe");
+  let indexRecipe = url.searchParams.get("index");
   createMoreDetail(titleRecipe, indexRecipe);
 }
 
@@ -17,10 +17,10 @@ request.onload = function () {
 function createMoreDetail(titleRecipe, indexRecipe) {
   
   const recipes = request.response;
-  const myTitle = document.querySelector(".title");
   const myMainFlex = document.querySelector(".d-flex");
-  var myImg = document.createElement('img');
-  var myTextRecipe = document.createElement('div');
+  let myTitle = document.querySelector(".title");
+  let myImg = document.createElement('img');
+  let myTextRecipe = document.createElement('div');
 
   myImg.className = "mainImg";
   myTextRecipe.className = "d-flex justify-content-end flex-wrap";
@@ -33,17 +33,35 @@ function createMoreDetail(titleRecipe, indexRecipe) {
   myMainFlex.appendChild(myTextRecipe);
 }
 
+//Click catagory recipe
+$(document).ready(function () {
+  $("#startersRecipes, #startersRecipes2").click(function () {
+      let mylink = "./homePage.html?type=starters";
+      location.replace(mylink);
+  });
+
+  $("#mainRecipes, #mainRecipes2").click(function () {
+      let mylink = "./homePage.html?type=main";
+      location.replace(mylink);
+  });
+
+  $("#dessertRecipes, #dessertRecipes2").click(function () {
+      let mylink = "./homePage.html?type=dessert";
+      location.replace(mylink);
+  });
+});
+
 //Searchs
 $(document).ready(function () {
   $("#searchButton").click(function () {
-    var word = searchInput.value;
-    window.find(word);
-  });
-
-  $("#searchInput").keyup(function () {
-    var word = searchInput.value;
-    if (word.length >= 3) {
+      let word = searchInput.value;
       window.find(word);
-    }
+  });
+  
+  $("#searchInput").keyup(function () {
+      let word = searchInput.value;
+      if (word.length >= 3) {
+          window.find(word);
+      }
   });
 });
