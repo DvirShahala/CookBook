@@ -1,17 +1,16 @@
 const FLEX = document.querySelector(".d-flex");
 
 //Get from db JSON details about recipes 
-var requestURL = 'https://my-json-server.typicode.com/DvirShahala/DBjson/recipes';
-var request = new XMLHttpRequest();
+const requestURL = 'https://my-json-server.typicode.com/DvirShahala/DBjson/recipes';
+const request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 request.onload = function () {
   const recipes = request.response;
-
-  let url_string = window.location.href
-  let url = new URL(url_string);
-  let typeRecipe = url.searchParams.get("type");
+  const url_string = window.location.href
+  const url = new URL(url_string);
+  const typeRecipe = url.searchParams.get("type");
 
   if (typeRecipe == null) {
     makeCards(recipes, "all");
@@ -23,7 +22,7 @@ request.onload = function () {
 
 //Make cards from json into html page 
 function makeCards(recipes, categoryType) {
-  var myTitle = document.querySelector('.title');
+  const myTitle = document.querySelector('.title');
 
   switch (categoryType) {
     case 'all':
@@ -42,13 +41,15 @@ function makeCards(recipes, categoryType) {
 
   for (let i = 0; i < recipes.length; i++) {
 
-    let myCard = document.createElement('div');
-    let myContainer = document.createElement('div');
-    let myImg = document.createElement('img');
-    let myMiddleCard = document.createElement('div');
-    let myBodyCard = document.createElement('div');
-    let myTitleCard = document.createElement('h5');
-    let myDescription = document.createElement('p');
+    const myCard = document.createElement('div');
+    const myContainer = document.createElement('div');
+    const myImg = document.createElement('img');
+    const myMiddleCard = document.createElement('div');
+    const myBodyCard = document.createElement('div');
+    const myTitleCard = document.createElement('h5');
+    const myDescription = document.createElement('p');
+    const thisRecipe = recipes[i].title;
+    const indexRecipe = i;
 
     myCard.className = "card";
     myContainer.className = "container";
@@ -64,16 +65,12 @@ function makeCards(recipes, categoryType) {
 
     //Events onclick
     myImg.addEventListener("click", function () {
-      let thisRecipe = recipes[i].title;
-      let indexRecipe = i;
-      let mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
+      const mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
       location.replace(mylink);
     });
 
     myTitleCard.addEventListener("click", function () {
-      let thisRecipe = recipes[i].title;
-      let indexRecipe = i;
-      let mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
+      const mylink = "./detailRecipe.html?recipe=" + thisRecipe + "&index=" + indexRecipe;
       location.replace(mylink);
     });
 
@@ -126,12 +123,12 @@ $(document).ready(function () {
 //Searchs
 $(document).ready(function () {
   $("#searchButton").click(function () {
-    let word = searchInput.value;
+    const word = searchInput.value;
     window.find(word);
   });
 
   $("#searchInput").keyup(function () {
-    let word = searchInput.value;
+    const word = searchInput.value;
     if (word.length >= 3) {
       window.find(word);
     }
