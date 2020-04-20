@@ -1,5 +1,5 @@
-var requestURL = 'https://my-json-server.typicode.com/DvirShahala/DBjson/users';
-var request = new XMLHttpRequest();
+const requestURL = 'https://my-json-server.typicode.com/DvirShahala/DBjson/users';
+const request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
@@ -7,9 +7,9 @@ request.send();
 //Click submit button
 $(document).ready(function () {
   $("#submit").click(function () {
-    let usersJson = request.response;
-    let userName = $("#userName").val();
-    let password = $("#password").val();
+    const usersJson = request.response;
+    const userName = $("#userName").val();
+    const password = $("#password").val();
     let is_valid = false;
 
     $(".errorMessage").empty();
@@ -25,8 +25,8 @@ $(document).ready(function () {
       if (is_valid == true) {
         location.replace("./homePage.html");
       } else {
-          $(".errorMessage").html(
-            "Username or password is not valid!");
+        $(".errorMessage").html(
+          "Username or password is not valid!");
       }
       return false;
     }
